@@ -1,9 +1,9 @@
-import React from 'react'
+export default async function BlogPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
 
-function BlogPage({params}: any) {
-  return (
-    <div> Blog Page {params.id}</div>
-  )
+  return <div>Blog Page {id}</div>;
 }
-
-export default BlogPage

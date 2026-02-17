@@ -12,8 +12,10 @@ function Nav() {
            <ul className="flex space-x-4 bg-amber-950 text-shadow-amber-50 gap-7 mr-6" >
          
             <li> <Link href={"/Admin"} className="hover:text-amber-200"> Admin </Link> </li>
+            <li> <Link href={"/Home"} className="hover:text-amber-200"> Home </Link> </li>
             <li> <Link href={"/blogpage"} className="hover:text-amber-200"> BlogPage</Link></li>
             <li> <Link  href={"/about"} className="hover:text-amber-200">about</Link></li>
+            <li> <Link  href={"https://www.linkedin.com/feed/"} className="hover:text-amber-200">google</Link></li>
         </ul>
       </div>
       

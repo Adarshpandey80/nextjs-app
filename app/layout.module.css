@@ -1,0 +1,12 @@
+.h1{
+    text-align: center;
+     margin: auto;
+     font-size: larger;
+     text-decoration: underline;
+}
+
+.img{
+    height: 400px;
+    width: 400px;
+    margin: auto;
+}

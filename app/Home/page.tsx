@@ -1,9 +1,10 @@
 import React from 'react'
-
+import Homepage from './Homepage'
 function page() {
   return (
     <>
-     <h1> Home Page </h1>
+     
+     <Homepage />
     </>
   )
 }

@@ -1,11 +1,12 @@
 import React from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
+
 type LayoutPage = {
     children: React.ReactNode;
 }
 
-function layout({children} :LayoutPage) {
+export default function RootLayout({children}: LayoutPage) {
   return (
     <html>
       <body>
@@ -20,4 +21,4 @@ function layout({children} :LayoutPage) {
   )
 }
 
-export default layout
+

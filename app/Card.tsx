@@ -12,7 +12,7 @@ function Card() {
     <>
     <div className="flex flex-wrap gap-2 m-4 p-4">
         {cards.map((item)=>(
-            <div className='w-64 h border-2 border-blue-950'>
+            <div className='w-64 h-32 border-2 border-blue-950 p-4 rounded-lg shadow-md' key={item.id}  >
                  <h1>{item.name}</h1>
                  <p>{item.describtion}</p>
             </div>

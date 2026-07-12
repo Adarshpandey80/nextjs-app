@@ -2,6 +2,7 @@
 
 import useSWR from "swr";
 
+
 const fetcher = async (url: string) => fetch(url).then((res) => res.json());
 
 type User = {
@@ -28,6 +29,8 @@ export default function UsersPage() {
           <h3>name: {item.Name}</h3>
         </div>
       ))}
+
+       
     </>
   );
 }

@@ -15,6 +15,7 @@ function Nav() {
             <li> <Link href={"/Home"} className="hover:text-amber-200"> Home </Link> </li>
             <li> <Link href={"/blogpage"} className="hover:text-amber-200"> BlogPage</Link></li>
             <li> <Link  href={"/about"} className="hover:text-amber-200">about</Link></li>
+            <li> <Link  href={"/users"} className="hover:text-amber-200">about</Link></li>
             <li> <Link  href={"https://www.linkedin.com/feed/"} className="hover:text-amber-200">google</Link></li>
         </ul>
       </div>

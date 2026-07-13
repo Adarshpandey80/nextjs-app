@@ -8,28 +8,29 @@ const fetcher = async (url: string) => fetch(url).then((res) => res.json());
 type User = {
   Id: number;
   Name: string;
+  message: string;
 };
 
 export default function ShowData() {
   const { data, error } = useSWR<User[]>(
-    "http://localhost:3000/api/hello",
+    "http://localhost:3000/api/user",
     fetcher,
     { refreshInterval: 1000, revalidateOnFocus: false }
   );
 
 
   if (error) return <div>Failed to load users</div>;
+  if(!data || data.length==0) return <div>No users found</div>;
 
   return (
     <>
       <h1>Users Page</h1>
-      {data?.map((item: User) => (
-        <div key={item.Id}>
-          <h2>User Details</h2>
-          <h3>id: {item.Id}</h3>
-          <h3>name: {item.Name}</h3>
+       {data.map((item)=>(
+        <div key={item.Id} className="border border-gray-300 rounded-md px-4 py-2 w-1/2 mt-4">
+          <h1> Id: {item.Id} </h1>
+          <h1> Name: {item.Name} </h1>
         </div>
-      ))}
+       ))}
 
        
     </>

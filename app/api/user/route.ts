@@ -15,3 +15,11 @@ export async function GET(){
 
 }
 
+export async function POST(req: Request){
+    const {name,email} = await req.json();
+    console.log(name,email);
+    await connectToDatabase();
+    const newUser = new User({name,email});
+    await newUser.save();
+    return NextResponse.json({    message: "User created successfully" }, { status: 201 });
+}

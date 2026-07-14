@@ -10,12 +10,11 @@ const userSchema = new Schema ({
         type: String,
         
     },
-    phone: {
-        type: Number,
-    }
+    
 })
 
 const User = mongoose.models.userModel || mongoose.model("userModel", userSchema);
+//"If userModel already exists, use it. Otherwise, create it."
 
 
 export default User;

@@ -6,14 +6,14 @@ import useSWR from "swr";
 const fetcher = async (url: string) => fetch(url).then((res) => res.json());
 
 type User = {
-  Id: number;
-  Name: string;
-  message: string;
+  _id: string;
+  name: string;
+  email: string;
 };
 
 export default function ShowData() {
   const { data, error } = useSWR<User[]>(
-    "http://localhost:3000/api/user",
+    "/api/user",
     fetcher,
     { refreshInterval: 1000, revalidateOnFocus: false }
   );
@@ -26,9 +26,9 @@ export default function ShowData() {
     <>
       <h1>Users Page</h1>
        {data.map((item)=>(
-        <div key={item.Id} className="border border-gray-300 rounded-md px-4 py-2 w-1/2 mt-4">
-          <h1> Id: {item.Id} </h1>
-          <h1> Name: {item.Name} </h1>
+        <div key={item._id} className="border border-gray-300 rounded-md px-4 py-2 w-1/2 mt-4">
+          <h1> Name: {item.name} </h1>
+          <h1> Email: {item.email} </h1>
         </div>
        ))}
 

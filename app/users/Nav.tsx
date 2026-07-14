@@ -8,8 +8,10 @@ export default function Nav(){
                 </div>
                 <ul className="flex space-x-4">
                     <li><a href="/users" className="hover:text-gray-400">ShowData</a></li>
+       
 
-                    <li><a href="/users/postData" className="hover:text-gray-400">PostData</a></li>
+                    <li><a href="/users/postdata" className="hover:text-gray-400">PostData</a></li>
+
 
                     <li><a href="/search" className="hover:text-gray-400">Search</a></li>
                 </ul>

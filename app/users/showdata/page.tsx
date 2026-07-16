@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/dist/client/link";
 import useSWR from "swr";
 
 
@@ -29,6 +30,7 @@ export default function ShowData() {
         <div key={item._id} className="border border-gray-300 rounded-md px-4 py-2 w-1/2 mt-4">
           <h1> Name: {item.name} </h1>
           <h1> Email: {item.email} </h1>
+          <button><Link href={`/users/${item._id}`}>View Details</Link></button>
         </div>
        ))}
 

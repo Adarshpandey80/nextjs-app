@@ -1,9 +1,13 @@
 import { NextResponse } from "next/server";
 import { connectToDatabase } from "@/app/lib/mongodb";
 import User from "@/app/models/userModel";
+import {NextRequest} from 'next/server'
 
-export async function GET(request: Request, { params }: { params: { id: string } }) {
-  const { id } = params;
+export async function GET(
+  request: Request,
+  context: { params: { id: string } }
+) {
+  const { id } = context.params;
   await connectToDatabase();
   const user = await User.findById(id);
 

@@ -5,9 +5,10 @@ import {NextRequest} from 'next/server'
 
 export async function GET(
   request: Request,
-  context: { params: { id: string } }
+  {params}: {params: Promise<{id:string}>}
 ) {
-  const { id } = context.params;
+  const { id } = await params;
+  console.log(id);
   await connectToDatabase();
   const user = await User.findById(id);
 

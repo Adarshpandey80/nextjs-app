@@ -8,14 +8,13 @@ type LayoutPage = {
 
 export default function RootLayout({children}: LayoutPage) {
   return (
-    <html>
-      <body>
+  <>
+
          <Navbar/>
-    <div> {children}</div>
+    {children}
     <Footer/>
-      </body>
-    </html>
-   
+     
+     </>
     
    
   )

@@ -36,11 +36,21 @@ const {email,password} = await req.json();
         jwtSecret,
         {expiresIn:"7d"}
     )
-
-    return NextResponse.json({
+ 
+   const response =  NextResponse.json({
          message:"Login successful",
-        token
+       
     });
+ 
+    response.cookies.set("token", token, {
+     httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "strict",
+     maxAge: 7 * 24 * 60 * 60,
+     path: "/",
+     });
+  
+    return response;
 
     } catch (error) {
         console.error("Error during login:", error);

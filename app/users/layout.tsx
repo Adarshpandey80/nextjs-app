@@ -7,11 +7,10 @@ type RootLayoutprops = {
 
 export default function RootLayout({children}:RootLayoutprops){
     return (
-        <html>
-            <body>
+       <>
+       
                 <Nav />
-                <div> {children} </div>
-            </body>
-        </html>
+             {children} 
+            </>
     )
 }

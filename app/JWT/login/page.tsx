@@ -2,8 +2,10 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage(){
+  const Router = useRouter();
   const [formData, setFormData] = useState({
     email:"",
     password:""
@@ -17,6 +19,8 @@ export default function LoginPage(){
     });
   }
 
+  console.log(formData);
+
   const handlSubmit = async (e: React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault();
     const res = await fetch("/api/auth/login",{
@@ -27,7 +31,9 @@ export default function LoginPage(){
       body:JSON.stringify(formData)
     })
     const data = await res.json();
-    console.log(data);
+    if(res.ok){
+     Router.push("/JWT/dashboard");
+    }
   }
 
   return (

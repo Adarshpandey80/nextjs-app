@@ -39,7 +39,6 @@ export default  function UserDetail() {
             method:"DELETE"
         })
         const data = await res.json();
-        console.log(data);
         if(res.ok){
            router.push("/users/showdata");
         }

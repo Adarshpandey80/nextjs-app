@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
+      console.log("Middleware:", request.nextUrl.pathname);
   const token = request.cookies.get("token")?.value;
   const pathname = request.nextUrl.pathname;
 

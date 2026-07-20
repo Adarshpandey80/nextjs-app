@@ -15,7 +15,15 @@ const registerSchema = new Schema({
     password:{
         type:String,
         required:true
-    }
+    },
+    resetPasswordToken: {
+    type: String,
+   },
+
+   resetPasswordExpires: {
+    type: Date,
+   },
+
 })
 
 const RegisterModel = mongoose.models.Register || mongoose.model("Register",registerSchema);

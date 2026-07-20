@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from "@/app/lib/mongodb";
 import RegisterModel from "@/app/models/RegisterModel";
 import crypto from "crypto";
-
+import { sendResetEmail } from "@/app/lib/sendEmail";
 export async function POST(req: NextRequest) {
   try {
     const { email } = await req.json();
@@ -48,8 +48,8 @@ export async function POST(req: NextRequest) {
     // Build reset link
     const resetLink = `http://localhost:3000/JWT/reset-password?token=${resetToken}`;
 
-    // TODO: Send email using Nodemailer or another email service
-    console.log("Reset Link:", resetLink);
+    // Send reset email
+    await sendResetEmail(user.email, resetLink);
 
     return NextResponse.json({
       message:

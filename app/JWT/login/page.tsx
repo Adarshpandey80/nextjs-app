@@ -3,6 +3,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+
 
 export default function LoginPage(){
   const Router = useRouter();
@@ -51,6 +53,7 @@ export default function LoginPage(){
           onChange={handleChange}
         />
         <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md ml-4">Login</button>
+       <Link href="/JWT/forget-password" className="ml-4 text-blue-500">Forget Password?</Link>
       </form>
     </>
   ) 

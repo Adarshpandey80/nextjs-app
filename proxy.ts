@@ -12,6 +12,8 @@ export function proxy(request: NextRequest) {
   const publicPages = [
     "/JWT/login",
     "/JWT/register",
+     "/JWT/forget-password",
+     "/JWT/reset-password"
   ];
 
 

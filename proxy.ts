@@ -10,18 +10,20 @@ export function proxy(request: NextRequest) {
   // Public Page Routes
 
   const publicPages = [
-    "/JWT/login",
-    "/JWT/register",
-     "/JWT/forget-password",
-     "/JWT/reset-password"
+   "/JWT/login",
+  "/JWT/register",
+  "/JWT/forget-password",
+  "/JWT/reset-password",
   ];
 
 
   // Public API Routes
   
   const publicApis = [
-    "/api/auth/login",
-    "/api/auth/register",
+      "/api/auth/login",
+     "/api/auth/register",
+    "/api/auth/forget-password",
+     "/api/auth/reset-password",
   ];
 
   // Allow public pages

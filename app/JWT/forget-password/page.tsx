@@ -10,7 +10,7 @@ export default function ForgetPassword() {
   ) => {
     e.preventDefault();
 
-    const res = await fetch("/api/auth/forgetPassword", {
+    const res = await fetch("/api/auth/forget-password", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
